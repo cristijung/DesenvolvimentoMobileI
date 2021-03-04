@@ -115,3 +115,5 @@ Pode-se imaginar um objeto como algo que guarda dentro de si os dados ou informa
 - objeto 
 - operações 
 - estrutura de dados
+
+![classeNumero](https://user-images.githubusercontent.com/17149877/110023388-e846d300-7d0b-11eb-9bf9-9df208754fbf.png)
