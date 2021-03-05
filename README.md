@@ -117,3 +117,8 @@ Pode-se imaginar um objeto como algo que guarda dentro de si os dados ou informa
 - estrutura de dados
 
 ![classeNumero](https://user-images.githubusercontent.com/17149877/110023388-e846d300-7d0b-11eb-9bf9-9df208754fbf.png)
+___________________________________________________________________
+
+## Exemplo  de exibição gráfica de classe:
+
+![uml](https://user-images.githubusercontent.com/17149877/110050618-0e339e00-7d33-11eb-80e7-1befec0de973.png)
