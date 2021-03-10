@@ -184,3 +184,85 @@ Sintaxe do método toString
 Este método não pode ser criado de qualquer maneira. Ele possui uma sintaxe padrão, onde alteramos apenas o que vai no “return”. O nome deve ser toString, sempre deve retornar uma String e não possui argumentos. 
 
 ![1](https://user-images.githubusercontent.com/17149877/110527229-76003500-80f5-11eb-9853-f581a6c5c3c4.png)
+
+___________________________________________________________________
+## Aula VII  - Desenvolvimento de Aplicativo  I - Java Orientado a Objeto  - Laços
+
+Laços de Repetição
+
+Os laços permitem que um determinado bloco de comandos seja executado repetidamente a partir de uma condição. Este tipo de instrução é utilizada em menus (onde o programa irá repetir enquanto o usuário quiser utilizá-lo), em pesquisas (onde podemos determinar a quantidade de pessoas que irão interagir com o programa respondendo a enquete) e, ou até mesmo em métodos que precisam ser executados várias vezes até encontrar a resposta desejada, por exemplo: fatorial de um número. Estas estruturas também ajudam a evitar que se escreva o mesmo comando várias vezes
+
+Tipos de Laços de Repetição: 
+ Cada linguagem de programação oferece algumas estruturas para desenvolver algoritmos com laços de repetição. Em Java, trabalhamos basicamente com os comandos: 
+while:  enquanto 
+do while:  faça enquanto 
+for:  para
+
+
+Tipos de execução:
+Laços Determinados:  Os laços determinados são aqueles nos quais nós como programadores temos o controle de quantas vezes o loop será executado, ou seja, sabemos o número de vezes que a instrução irá repetir, temos o controle do início e do fim do laço. 
+Exemplos de Laços Determinados: - Uma enquete onde o objetivo é entrevistar 50 pessoas. Neste laço sabemos que a enquete será repetida 50 vezes, e que o início será na 1ª pessoa entrevistada, e o fim será na 50ª pessoa entrevistada.
+
+Os laços indeterminados: são aqueles nos quais não temos controle de quantas vezes serão executados, portanto sabemos o seu início, porém não sabemos o seu fim. 
+Exemplos de Laços Indeterminados: - O usuário escolhe se deseja sair ou deseja testar o programa mais vezes. Até agora nossos programas foram executados apenas uma vez, para testarmos novamente temos que fechar o terminal e reabri-lo. Para não termos esse trabalho, podemos apenas colocar um loop no programa e fazer com que antes de terminar o programa o mesmo mostre na tela a seguinte mensagem: 
+
+
+
+
+Resumindo!
+As estruturas de repetição também são conhecidas como laços (loops) e são utilizadas para executar, repetidamente, uma instrução ou bloco de instrução enquanto determinada condição estiver sendo satisfeita.
+Qualquer que seja a estrutura de repetição, ela contém quatro elementos fundamentais: inicialização, condição, corpo e iteração. 
+A inicialização compõe-se de todo código que determina a condição inicial da repetição. 
+A condição é uma expressão booleana avaliada após cada leitura do corpo e determina se uma nova leitura deve ser feita ou se a estrutura de repetição deve ser encerrada. 
+O corpo compõe-se de todas as instruções que são executadas repetidamente. 
+A iteração é a instrução que deve ser executada depois do corpo e antes de uma nova repetição.
+
+
+
+
+While (enquanto):
+O laço de repetição while caracteriza-se por ter seu teste de execução antes de iniciar o loop. Neste tipo de laço nem sempre temos a execução dos comandos, ou seja, nem sempre ele entra no loop, traduzindo, o While é utilizado para construir uma estrutura de repetição que executa, repetidamente, uma única instrução ou um bloco delas “enquanto” uma expressão booleana for verdadeira. 
+
+Sintaxe básica:
+                          enquanto a condição for verdadeira {
+                               executa as instruções
+                           }
+
+
+
+Exemplos:
+int x = 0;
+while (x < 10) {
+    System.out.println("Item " + x);
+    x++;
+}
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110692917-a44d4580-81c5-11eb-8646-5076ecccc05b.png)
+
+Do While (faça enquanto): 
+A estrutura de repetição do-while é uma variação da estrutura while. Existe uma diferença sutil, porém importante, entre elas. Em um laço while, a condição é testada antes da primeira execução das instruções que compõem seu corpo. Desse modo, se a condição for falsa na primeira vez em que for avaliada, as instruções desse laço não serão executadas nenhuma vez. Em um laço do-while, por outro lado, a condição somente é avaliada depois que suas instruções são executadas pela primeira vez, assim, mesmo que a condição desse laço seja falsa antes de ele iniciar, suas instruções serão executadas pelo menos uma vez.
+
+Condição: O do while executará as instruções enquanto a condição nos parênteses for verdadeira! No momento que a condição for falsa ele para de executar as instruções dentro do bloco do while. 
+
+
+Observe que na sua primeira execução ele não analisa nenhuma condição: executa primeiro e depois analisa. Instruções – Dentro de um do while podemos utilizar qualquer tipo de instrução, ou seja, podemos: mostrar uma mensagem, declarar variáveis, utilizar if(){}, utilizar um while(){} e assim por diante.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110693087-d199f380-81c5-11eb-93bc-7fa356ca9214.png)
+
+For (para): 
+O for (para, em inglês - quer dizer: “para este caso... fazer...”) pode conter apenas uma instrução no seu corpo. Neste caso não é necessário abrir um bloco. Isso é assim porque o “for” já implementa alguns comandos na sua assinatura, ou seja, no seu cabeçalho, como a inicialização da variável e o passo da re
+petição, ou seja, o incremento/decremento da variável (executado sempre no fim de cada ciclo). O laço for é uma estrutura de repetição compacta. Seus elementos de inicialização, condição e iteração são reunidos na forma de um cabeçalho e o corpo é disposto em seguida.
+O laço for e o laço while são apenas formas diferentes de uma mesma estrutura básica de repetição. Qualquer laço for pode ser transcrito em termos de um laço while e vice-versa. Do mesmo modo que em um laço while, se a condição de um laço for já é falsa logo na primeira avaliação que se fizer dela, as instruções contidas em seu corpo jamais serão executadas.
+
+
+Vamos analisar a sintaxe da estrutura for. 
+Observe que na primeira linha, dentro dos parênteses, ao invés de termos apenas a condição como acontecia com o while e do while, temos agora três comandos separados por ponto e vírgula. 
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110693195-ef675880-81c5-11eb-94a4-1f689cffd2e8.png)
+
+Comando inicial: Este comando executa apenas uma vez, quando o código entra no loop. Aqui podemos declarar uma variável, por exemplo, como é muito comum. 
+Condição: O mesmo tipo de condição que montamos em while e do while. Se ela for verdadeira, as instruções serão executadas. Se for falsa, o loop encerra. 
+Comando de loop: Este comando é executado sempre que o for completa uma volta, ou seja, na primeira execução ele pula este comando.
+
+
+
