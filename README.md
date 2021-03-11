@@ -264,5 +264,151 @@ Comando inicial: Este comando executa apenas uma vez, quando o código entra no 
 Condição: O mesmo tipo de condição que montamos em while e do while. Se ela for verdadeira, as instruções serão executadas. Se for falsa, o loop encerra. 
 Comando de loop: Este comando é executado sempre que o for completa uma volta, ou seja, na primeira execução ele pula este comando.
 
+_____________________________________________________________________________________
+## Aula VIII -  Array & ArrayList
+
+## Array
+
+Um array é um objeto capaz de armazenar um número fixo de valores de um único tipo. A quantidade de elementos que armazena é estabelecida quando ele é criado e após a criação seu comprimento de mantém fixo (ORACLE, 2012).
+O uso de arrays é indicado quando temos uma certa quantidade de elementos que serão manipulados/armazenados. Por exemplo: as notas de um aluno, as questões de uma prova, as alternativas das questões, um conjunto de números, e assim por diante.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110851590-02def600-8290-11eb-9b81-07ed2dc4bb85.png)
+
+
+Para que serve um Array?
+
+Um array é uma sequência não ordenada de dados. Os elementos residem em um lugar separado na memória, e seu acesso é feito por meio de um índice na primeira posição de cada elemento
+
+
+
+
+Criando um Array
+
+A declaração de um array utiliza um conjunto de colchetes vazio ao lado do tipo. O tipo pode ser tanto primitivo quanto de referência.
+Tipos primitivos: são os tipos de dados básicos da linguagem, com eles podemos criar outros tipos. Exemplos: int, char, byte, boolean, etc.
+Tipos de referência: são as classes do sistema, tanto as do Java quanto as criadas pelo programador. Exemplos: String, Pessoa, etc.
+
+
+Declarações do Array
+1ª forma: Declaração e instância em linhas separadas
+
+O exemplo abaixo primeiro declara o Array, utilizando o tipo desejado seguido de colchetes vazios e o nome que se deseja atribuir ao array. Em outra linha, o comando new é responsável pela criação do objeto na memória. No exemplo, seria criado um array com capacidade para 5 números inteiros, organizados em índices de 0 até 4. Cria-se um array vazio, pronto para receber elementos.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110851698-230eb500-8290-11eb-9d9e-42342ad26ebb.png)
+
+2ª forma: Declaração e instância na mesma linha
+O exemplo abaixo é uma forma abreviada de declarar e instanciar o array também vazio.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110851752-37eb4880-8290-11eb-80ea-ed9161a707cb.png)
+
+3ª forma: Declaração com atribuição de valores
+O exemplo abaixo demonstra como criar um array já com elementos armazenados.
+O primeiro exemplo criaria um array com 5 elementos, conforme a imagem abaixo. O segundo exemplo criaria um array chamado “cores”
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110851822-53565380-8290-11eb-9d1b-75917b165cc8.png)
+
+Armazenando valores no array
+Após a declaração e instância do array, ele está pronto para armazenar valores. Para isso, é necessário indicar em qual posição queremos armazenar o valor. Esta posição pode ser indicada por um número inteiro definido ou por uma variável do tipo inteiro que contenha um valor de índice válido.
+
+Vamos utilizar como exemplo o seguinte array:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110851907-6cf79b00-8290-11eb-82a9-d6680a52756b.png)
+
+Vamos armazenar um número qualquer na primeira posição do array:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110851987-8b5d9680-8290-11eb-8f86-a97a25cf24ea.png)
+
+Ocupando a posição 0, as demais ficam à disposição para armazenar outros valores. Caso você utilize novamente a posição 0 para armazenar um valor, ele substituirá o valor antigo pelo novo. Observe o exemplo:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110852035-9d3f3980-8290-11eb-961a-8e51f8681f2c.png)
+
+Preenchendo outras posições:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110852128-b9db7180-8290-11eb-9862-1f9030b7d60f.png)
+
+A posição pode ser indicada por uma variável inteira. Observe o exemplo (considere que o array está vazio):
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110852209-d2e42280-8290-11eb-9a9b-b662fb802df2.png)
+
+Preenchendo um array com valores informados pelo usuário:
+Para preencher um array com valores informados pelo usuário podemos utilizar um laço de repetição. Observe o exemplo, que preencherá um array criado na classe Main com valores digitados no terminal:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110852283-ef805a80-8290-11eb-85c6-843a7af9823a.png)
+
+Utilizando a classe Arrays para exibir o conteúdo de um array
+A classe Arrays deve ser importada no início da classe. O método toString já possui um formato padrão de exibição, que apresenta os elementos entre colchetes separados por ponto e vírgula. 
+
+
+O que é o método toString?
+
+Classe Object – método toString()
+O método toString() retorna uma String que representa o objeto que está chamando o método. Isso é útil para o propósito de log e debug. Vamos descrever o que esse método está fazendo.
+
+
+
+
+Observe o exemplo:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110852560-49812000-8291-11eb-85d4-6e84362fb8ab.png)
+
+## Classe ArrayList
+
+Um ArrayList é uma coleção dinâmica capaz de armazenar um número indeterminado de objetos.
+A classe ArrayList permite criar um objeto que é capaz de armazenar e gerenciar uma coleção de outros objetos. Um objeto da classe ArrayList é semelhante à estrutura array, porém os arrays são estáticos, nos quais temos que determinar um número de elementos que serão armazenados e esse número de elementos permanece até o final do programa, já a coleção ArrayList é dinâmica, isso significa que a mesma não precisa ter um número determinado para armazenamento e sua estrutura se adapta com cada objeto inserido.
+
+Vantagens em utilizar a classe ArrayList:
+
+Vantagens em relação à estrutura array:
+Podemos guardar um conjunto de dados especificando o tipo de objeto;
+É dinâmico: não possui tamanho definido;
+Já possui métodos para facilitar o gerenciamento da coleção – inserção, exclusão, classificação e assim por diante. 
+
+
+
+Importação da Classe:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110853053-e774ea80-8291-11eb-91b3-023a554a8fa4.png)
+
+
+Declaração de um ArrayList:
+
+
+visibilidade 
+
+           ArrayList <TipoObjeto> nomeObjeto;
+           nomeObjeto = new ArrayList<>();
+
+ou visibilidade  
+
+ArrayList <TipoObjeto> nomeObjeto = new ArrayList<>();
+
+
+Tipos de Objetos
+Podemos armazenar objetos do tipo números inteiros, números reais, textos,
+valores booleanos e objetos de classes criadas no sistema. Vejamos um exemplo de cada.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110853158-096e6d00-8292-11eb-9740-bf8c42e74216.png)
+
+Dica:
+
+Obs.:
+ Dependendo da versão do seu JDK, pode haver necessidade de repetir o tipo de dado.
+ Exemplo: 
+
+private ArrayList <Funcionario>listaDeFuncionarios;
+listaDeFuncionarios = new ArrayList<Funcionario>();
+
+
+Métodos da classe ArrayList:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/110853247-2a36c280-8292-11eb-9e57-1a96c0220613.png)
+
+## Referência:
+https://docs.google.com/document/d/1K-ZDRFHzORXG6T9AXwdwsGWsclGQRKhTIfkReNZxIRw/edit
+
+
+
+
+
 
 
