@@ -526,6 +526,167 @@ História do Android
 
 https://www.android.com/intl/pt-BR_br/history/
 
+__________________________________________________________________________________
+## Sistemas Operacionais Mobile
+
+Atualmente, os dois principais sistemas operacionais para smartphones são o Android e iOS. Estes sistemas são desenvolvidos por companhias diferentes que brigam pelo domínio dessa área.
+Algumas diferenças: A batalha Android vs iOS: quais suas principais diferenças? | RMA
+
+
+Contexto histórico
+
+Apesar de ter uma vida um pouco mais longa como sistema operacional (desde 2003), o Android se tornou relevante em 2007 quando a Google anunciou seus planos de disponibilização livre de um sistema operacional para dispositivos móveis com características semelhantes ao recém lançado iPhone.
+
+Por ser um sistema operacional livre, a intenção da empresa foi de buscar parceiros, através da Open Handset Alliance, para fabricação do hardware (telefone celular) e embarcar no seu sistema operacional livre.
+
+Comercialmente isso aconteceu em 2008 quando a HTC lançou o seu primeiro telefone com o sistema operacional Android.
+
+
+O SO Android
+
+O sistema operacional Android é hoje líder absoluto nos tablets e smartphones disponíveis no mercado mundial. Lançado pelo Google com o intuito claro de disputar com o iPhone da Apple, a
+plataforma móvel do “robozinho” ganhou uma enorme fatia do mercado por várias (e merecidas) razões:
+
+Possui uma interface agradável e fácil de usar, que conquista tanto usuários novatos como os mais experientes;
+Sua arquitetura aberta possibilita que o mesmo seja utilizado em aparelhos de vários fabricantes;
+Utiliza a linguagem Java para criação de seus aplicativos.
+
+
+Visão geral do armazenamento de dados e arquivos
+
+
+O sistema operacional Android utiliza Java (ou Kotlin) como a linguagem de programação para seus aplicativos, e traz um conjunto rico de classes e ferramentas para o desenvolvimento de programas que faz uso dos principais recursos existentes nestes aparelhos.
+
+
+
+Kotlin é uma Linguagem de programação multiplataforma, orientada a objetos e funcional, concisa e estaticamente tipada, desenvolvida pela JetBrains em 2011, que compila para a Máquina virtual Java e que também pode ser traduzida para a linguagem JavaScript e compilada para código nativo.
+
+
+
+
+
+Android Studio
+
+O Android Studio é o ambiente de desenvolvimento integrado (IDE, na sigla em inglês) oficial para o desenvolvimento de apps para Android e é baseado no IntelliJ IDEA (link em inglês).
+
+Além do editor de código e das ferramentas de desenvolvedor avançadas do IntelliJ, o Android Studio oferece ainda mais recursos para aumentar sua produtividade na compilação de apps Android, como:
+
+Um sistema de compilação flexível baseado em Gradle
+Um emulador rápido com inúmeros recursos
+Um ambiente unificado que possibilita o desenvolvimento para todos os dispositivos Android
+A aplicação de alterações para enviar alterações de código e recursos ao aplicativo  em execução sem reiniciar o aplicativo 
+Modelos de código e integração com GitHub para ajudar a criar recursos comuns de apps e importar exemplos de código
+Frameworks e ferramentas de teste cheios de possibilidades 
+Ferramentas de lint para detectar problemas de desempenho, usabilidade, compatibilidade com versões, entre outros
+Compatibilidade com C++ e NDK
+Compatibilidade integrada com o Google Cloud
+Platform, facilitando a integração do Google Cloud
+Messaging e do App Engine.
+Entrada e saída são implementados através do device drivers. Sempre que um novo dispositivo é acrescentado no sistema, o drive deve ser acoplado ao núcleo.
+
+
+Interface e criando projeto no Android Studio
+
+A estrutura:
+
+Cada projeto no Android Studio contém um ou mais módulos com arquivos de código-fonte e de recursos.
+
+Os tipos de módulos incluem:
+
+Módulos de apps Android
+Módulos de biblioteca
+Módulos do Google App Engine
+
+![1](https://user-images.githubusercontent.com/17149877/111529551-0d423980-8741-11eb-9189-2c9f86e74076.png)
+
+Por padrão, o Android Studio exibe os arquivos do projeto na visualização de projetos Android, como mostrado na figura abaixo.
+
+Essa visualização é organizada por módulos para permitir o acesso rápido aos principais arquivos de origem do projeto.
+
+
+![11111](https://user-images.githubusercontent.com/17149877/111529630-24812700-8741-11eb-804b-95122f8085a0.png)
+
+Todos os arquivos de criação podem ser vistos no nível superior em Gradle Scripts, e cada módulo de app contém as pastas a seguir:
+
+manifests: contém o arquivo AndroidManifest.xml. Está o arquivo com configuração do aplicativo. Por exemplo, a configuração do ícone do aplicativo.
+
+Java: Encontram-se todos os arquivos java. Dessa forma, o diretório armazena toda a lógica do aplicativo.
+
+Recursos: Estão armazenados todos os arquivos referentes à interface do usuário, podendo conter imagens, ícones, layouts etc.
+
+Gradle Script: estão armazenados todos os scripts responsáveis pela compilação do aplicativo.
+
+
+
+
+
+Para navegar na interface do usuário, é preciso clicar duas vezes sobre o arquivo “activity_main.xml”
+
+
+A Activity é o principal componente de um aplicativo Android. As activities são os componentes associados às telas com que os usuários interagem em um aplicativo.
+
+
+
+Configuração do emulador do Android Studio
+
+
+![2](https://user-images.githubusercontent.com/17149877/111529856-6742ff00-8741-11eb-8707-d671f888702a.png)
+
+Podemos usar outros emuladores também, pois o AVD é extremamente pesado e requer muito do hardware. Abaixo vemos o emulador do Android Studio.
+
+![android](https://user-images.githubusercontent.com/17149877/111530048-9ce7e800-8741-11eb-9472-95dc37a7fa8b.png)
+
+As opções são usar um dos emuladores que já postei na aula IX ou mesmo fazer a emulação pelo celular, para tanto, precisamos que o celular esteja conectado ao computador via USB.
+
+
+## Vamos fazer o tutorial pelo Genymotion, em aula podemos ver como fazer com os outros.
+
+Primeiro vamos abrir um novo Projeto no Android Studio:
+
+
+Se já estiver aberto:
+Caso tenha um projeto aberto, selecione  File > New > New Project.
+Na janela Choose your project, selecionar Empty Activity.
+Na janela Configure your project, insira os seguintes valores:
+
+Nome: "MyFirstApp"
+Nome do pacote: "com.example.myfirstapp"
+Marque a caixa ao lado de Use AndroidX artifacts.
+Altere o local do projeto se desejar
+Deixe as outras opções como estão. Selecione Java na linguagem.
+
+
+Agora vamos abrir o Genymotion. E aguardamos ele dar o start
+
+![2222](https://user-images.githubusercontent.com/17149877/111531900-df122900-8743-11eb-943e-aabdb2c1c328.png)
+
+![gen](https://user-images.githubusercontent.com/17149877/111531916-e46f7380-8743-11eb-8c2a-567c1271217f.png)
+
+Após ele dar o start, vamos ativar o dispositivo, se você não tem nenhum dispositivo adicionado, basta clicar no sinal de + e adicionar o que deseja emular para o Android Studio, neste exemplo, temos um Custom Phone selecionado.
+
+Após ele fazer o download, vamos dar o start no dispositivo:
+
+![g1](https://user-images.githubusercontent.com/17149877/111532287-40d29300-8744-11eb-8fb8-c5a744d57f57.png)
+
+
+Aguardamos o início da virtualização;
+O dispositivo começa a ser carregado;
+
+![g2](https://user-images.githubusercontent.com/17149877/111532380-5ba50780-8744-11eb-9715-e017961be6d5.png)
+
+Dispositivo carregado
+
+![g3](https://user-images.githubusercontent.com/17149877/111532430-6a8bba00-8744-11eb-855b-5ccb561e00c1.png)
+
+Dispositivo vinculado no Android Studio
+
+![g4](https://user-images.githubusercontent.com/17149877/111532502-7c6d5d00-8744-11eb-8a90-0ad4742d71a6.png)
+
+Podemos também fazer a emulação pelo celular. No link abaixo você pode encontrar um rápido emulador para celular. Ali tem a documentação também!
+
+https://github.com/barry-ran/QtScrcpy
+
+
 
 
 
