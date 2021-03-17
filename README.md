@@ -686,7 +686,7 @@ Podemos também fazer a emulação pelo celular. No link abaixo você pode encon
 
 https://github.com/barry-ran/QtScrcpy
 
-
+https://www.genymotion.com/
 
 
 
