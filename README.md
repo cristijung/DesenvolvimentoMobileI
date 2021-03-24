@@ -844,6 +844,105 @@ ID = btnDiv
 ## Referências
 https://docs.google.com/document/d/1l9jEpvOcJXP-0Dx7EgI5kCNHAbXj_OUOZOtb2GjqFVA/edit
 
+_________________________________________________________________________
+
+##  Aula XIV e XV de Desenvolvimento de Aplicativo I
+Revisão de Layout
+Continuação do projeto Calculadora
+Classe R - Android
+Método findViewById();
+Listener de Eventos
+Métodos de Eventos
+_____________________________________________________________________________________________________
+Fontes:
+https://developer.android.com/training/basics/firstapp?hl=pt-br
+https://developer.android.com/training/basics/firstapp/building-ui?hl=pt-br 
+https://www.devmedia.com.br/tutorial-de-android-studio/34003 
+https://developer.android.com/guide/topics/resources/providing-resources?hl=pt-br 
+https://tableless.com.br/manipulando-views-com-android/ 
+https://developer.android.com/guide/topics/ui/ui-events?hl=pt-br#:~:text=Um%20listener%20de%20eventos%20%C3%A9,com%20o%20item%20na%20IU. 
+_____________________________________________________________________________________________________
+Continuação do projeto Calculadora 
+
+Vamos dar continuidade ao projeto da calculadora, na aula de ontem, finalizamos o nosso tutorial da seguinte forma:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/112393979-aee5ff80-8cda-11eb-8c1a-944b0cda12fc.png)
+
+Observação: o tutorial está em cor diferente do documento anterior porque estes prints foram feitos em aula e este app ficou mais legal que o original ….. ;)
+
+Na próxima etapa iremos inserir mais um campo de texto para o resultado e para facilitar a nossa vida, iremos fazer via código de acordo com a imagem abaixo! Observem os nomes, eles serão muito importantes.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/112394059-d3da7280-8cda-11eb-80d2-cb8dd87bbf1d.png)
+
+Ainda é possível colocar margin_top ou bottom para configurar o distanciamento dos componentes inseridos no layout do app, ou ainda: zerar todos os atributos layout_height e configurar o layout_weight por valores, tipo 2.4, 3.5 …. desta forma estaremos configurando as alturas pela proporção, o que é aconselhável para controle de tamanho de imagens. 
+
+## Classe R - Android
+
+Afinal, qual é a classe R no Android?
+
+No Android Studio, quando nós criamos um projeto usando uma empty activity, o AS gera o seguinte código!
+
+![Sem título](https://user-images.githubusercontent.com/17149877/112394295-3c295400-8cdb-11eb-9ecb-d7e1357f7be4.png)
+
+A classe R é uma classe de mapeamento e/ou setamento que cria objetos de acesso para todos os componentes/objetos do nosso layout no app. Não é porque criamos os componentes no layout que não precisaremos criar no Java também! Nesta criação é construído um vínculo entre o elemento construído no design e mapeado em nós no xml e o Java, portanto, a classe R é responsável por criar uma “interface de controle” ou comunicação entre as estruturas de um projeto Android - os arquivos xml e Java!
+
+Classe R contém as definições de todos os recursos de um pacote de aplicativo específico . Ele está no namespace do pacote do aplicativo.
+
+Geralmente, há duas R classes com as quais trabalhamos:
+
+Os recursos da estrutura em android.Re
+Seu próprio namespace
+
+## Vamos para a Classe R
+
+Alternamos para o modo Code e vamos acessar o arquivo MainActivity.java
+
+1ª Parte! 
+Declarando os atributos Java e importando as classes destes dados.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/112394455-81e61c80-8cdb-11eb-9617-b48bf77c1bdd.png)
+
+Agora o mapeamento dos objetos criados no xml e no java!
+2ª Parte! 
+Pois então! Todo o componente criado no Java precisa ser mapeado para o xml que é o nosso layout, por isso a importância de definirmos os “IDs” de forma correta e adequada ao que cada elemento significa na aplicação. Vamos usar o método findViewById(); Este método tem a função de achar a view do nosso layout e associar (mapear) ao objeto Java criado!
+
+![Sem título](https://user-images.githubusercontent.com/17149877/112394534-a80bbc80-8cdb-11eb-9df7-fcb410cff2fd.png)
+
+Vamos repetir para cada objeto criado no Java! Observe que as cores dos objetos criados em Java mudaram de cor após o mapeamento! Desta forma, após este mapeamento, a aplicação saberá que quando o componente de layout for “chamado” por uma ação do usuário, ele tem a referência do objeto Java especificado.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/112394628-d25d7a00-8cdb-11eb-94cb-fb9fd210681d.png)
+
+3ª Parte! 
+Configuração dos Listener de Eventos e os Métodos de Eventos. 
+
+Listener define sempre quando algum componente está "à espera" da ação que é o evento promovido pelo usuário que está manipulando o app que desenvolvemos. 
+
+Os métodos de eventos podem se resumir a:
+
+onClick()
+De View.OnClickListener. É chamado quando o usuário toca no item (no modo de toque) ou foca no item com as teclas de navegação ou o trackball e pressiona a tecla "Enter" adequada ou pressiona o trackball.
+
+onLongClick()
+De View.OnLongClickListener. É chamado quando o usuário mantém o item pressionado (no modo de toque) ou foca no item com as teclas de navegação ou o trackball e mantém pressionada a tecla "Enter" adequada ou mantém o trackball pressionado (por um segundo).
+
+onFocusChange()
+De View.OnFocusChangeListener. É chamado quando o usuário navega para ou do item usando as teclas de navegação ou o trackball.
+
+onKey()
+De View.OnKeyListener. É chamado quando o usuário está com foco no item e pressiona ou solta uma tecla de hardware no dispositivo.
+
+onTouch()
+De View.OnTouchListener. É chamado quando o usuário realiza uma ação qualificada como um evento de toque, incluindo o pressionamento, a liberação ou qualquer outro gesto de movimento na tela (dentro dos limites do item).
+
+(fonte: https://developer.android.com/guide/topics/ui/ui-events?hl=pt-br#:~:text=Um%20listener%20de%20eventos%20%C3%A9,com%20o%20item%20na%20IU. )
+
+![Sem título](https://user-images.githubusercontent.com/17149877/112395000-5c0d4780-8cdc-11eb-9b3e-d5fcba61340b.png)
+
+## Referência
+https://docs.google.com/document/d/1KchQNv4hSoHT6HXuae_fDKAzSuoDE6ScNuDjAvxZXvo/edit
+
+
+
 
 
 
