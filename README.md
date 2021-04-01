@@ -941,6 +941,31 @@ De View.OnTouchListener. É chamado quando o usuário realiza uma ação qualifi
 ## Referência
 https://docs.google.com/document/d/1KchQNv4hSoHT6HXuae_fDKAzSuoDE6ScNuDjAvxZXvo/edit
 
+__________________________________________________________________________
+## Aula XVII e XVIII - Desenvolvimento de Aplicativo I
+Integrando projeto entre Janelas
+Criando o primeiro jogo
+Layout Relativo
+startActivity()
+finish()
+Intent()
+Usando controle de dados condicionais e estruturas (IF, Else e Arrays)
+______________________________________________________________________________________________________
+Fontes:
+Intents e filtros de intents | Desenvolvedores Android 
+Start another activity 
+Activity 
+Iniciar uma atividade usando uma animação | Desenvolvedores Android 
+______________________________________________________________________________________________________
+Integrando projeto entre Janelas
+
+Na criação de um App ele não se dá somente em uma tela, em um projeto teremos várias telas integradas entre si - cada tela possui um layout próprio e um arquivo Java próprio. O Android Studio não permite que componentes e objetos de layout possuam a mesma referência de identificação, ou seja, o ID. Portanto a documentação registrada do projeto precisa ser precisa e receber nomes diferentes para cada elemento/objeto inserido em uma tela.
+
+Na aula de hoje, iremos criar um jogo (Jogo da Velha) onde iremos definir desde o início os cuidados com as nomenclaturas e organização do projeto.
+Vamos abrir um novo projeto onde o nome será: JogodaVelha em um Activity Empty
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113347670-e3297380-930b-11eb-8466-c66fd7087fe1.png)
+
 
 
 
