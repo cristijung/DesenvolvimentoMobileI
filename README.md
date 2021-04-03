@@ -966,7 +966,153 @@ Vamos abrir um novo projeto onde o nome será: JogodaVelha em um Activity Empty
 
 ![Sem título](https://user-images.githubusercontent.com/17149877/113347670-e3297380-930b-11eb-8466-c66fd7087fe1.png)
 
+Após as definições iniciais do nosso projeto, iremos fazer o layout inicial do jogo.
+Vamos fazer a alteração para Layout Linear e orientação vertical.
 
+![Sem título](https://user-images.githubusercontent.com/17149877/113485703-44288700-9485-11eb-8121-540a604014b1.png)
+
+Após, iremos buscar na  Internet uma imagem que remete ao tipo de jogo e arrastar para a pasta drawable. Nesta pasta podemos criar outras pastas se forem necessárias para a organização dos nossos arquivos dependentes.
+
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113485862-2d366480-9486-11eb-9c9b-5900c61bd8e7.png)
+
+Neste exemplo eu inseri uma imagem de fundo com a mesma cor da imagem que escolhi, na verdade, eu cortei a imagem para que ficasse menor e retirei o fundo.
+Nunca esqueça de pesquisar na documentação ou em sites confiáveis para ver os últimos releases da IDE e como vocês podem potencializar a inserção de imagens sem perder a qualidade visual da aplicação e sem onerar o usuário que irá utilizar seu App.
+
+
+ImageView Android: Como utilizar o ImageView para exibir imagens
+Visão geral de drawables | Desenvolvedores Android 
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113485880-4b9c6000-9486-11eb-9123-a6d0f7e9dbf8.png)
+
+Elabore o Layout similar como a imagem abaixo, você pode usar outras imagens e cores. Observe os IDs dos componentes - Component tree
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113485902-71c20000-9486-11eb-8033-a8e3fff0b264.png)
+
+Depois que nosso Layout estiver pronto iremos para a Main fazer o mapeamento e abrir outra tela.
+
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113485933-9b7b2700-9486-11eb-92dd-5e40a11665ae.png)
+
+A próxima etapa será a criação da nova tela e, para criação da nova tela, precisamos de outra Activity. Vamos criar uma Activity dentro do nosso projeto. Vamos clicar com o botão direito sobre o nosso projeto/Novo/Activity/EmptyActivity.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113485966-b8aff580-9486-11eb-87c4-d0b4483af179.png)
+
+Vamos inserir o nome de ComoJogar.
+Observe que o box de gerar layout de xml está ativo e as demais informações estão apontando para o nosso projeto!
+Observe o nosso ambiente de trabalho!
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113485999-e1d08600-9486-11eb-91d3-5b45cbc438ed.png)
+
+Vamos elaborar o seguinte layout em sua estrutura cuidando com as IDs dos botões.
+Declaração e mapeamento.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113486017-03ca0880-9487-11eb-82ed-9fc36ae14ec7.png)
+
+A próxima Activity que iremos criar será a do próprio jogo. Obviamente que para um Jogo da Velha não há necessidade de criar tantas Activities, mas este processo é pedagógico, para que possamos entender o funcionamento da estrutura de um App desenvolvido em Java para Android. 
+
+Vamos repetir o processo para criar Nova Activity no nosso projeto:
+
+Clicar com o botão direito na pasta Java do nosso Projeto;
+Selecionar New;
+Selecionar Activity;
+Empty Activity
+
+Nome: JogoVelha
+
+Vamos fazer o seguinte Layout (imagem abaixo) observando que:
+
+Estamos trabalhando com Layout Linear já desde o início, porém nesta View iremos introduzir o Layout Relativo no AS.
+
+##  Layout relativo
+
+RelativeLayout é um grupo de visualizações que exibe visualizações filhas (dependentes) em posições relativas. A posição de cada visualização pode ser especificada como relativa a elementos irmãos (por exemplo, à esquerda ou abaixo de outra visualização) ou em posições relativas à área RelativeLayout pai (por exemplo, alinhado à parte inferior, à esquerda ou no centro).
+
+É o tipo de layout utilizado no Android para se posicionar os elementos em relação a outro. Por exemplo, se temos um Text View e o desenvolvedor posicionar o botão a sua esquerda, no XML pode-se fazer referência a esse para que o elemento de tela seja posicionado em um determinado lugar de acordo com sua posição. (fonte: Artigo Linear, Table e Relative Layouts com Android Studio )
+
+Você pode ler mais aqui, na documentação do Android:
+Layout relativo | Desenvolvedores Android
+Layouts | Desenvolvedores Android
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113486070-4db2ee80-9487-11eb-83be-80552f886f84.png)
+
+Não esqueça de importar os componentes de Layout no xml! =D
+
+## Agora vamos à programação do nosso App!
+
+
+Precisamos fazer a ligação entre as telas, ou seja, a navegação do aplicativo e a lógica do jogo. O que temos até agora são os Layouts e seus xml + o mapeamento dos objetos! Precisamos ….
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113486114-7c30c980-9487-11eb-8ce3-707486b8bb68.png)
+
+Vamos para a primeira classe que é a MainActivity, é a inicial do nosso App!
+
+Nesta classe iremos criar um  método para abrir a outra tela em que temos os nossos layouts. Sempre precisamos analisar como o fluxo do aplicativo se dará, é muito importante! A imagem abaixo não é um fluxograma (mais adequado para desenvolvimento de um App, mas exibe o fluxo da nossa aplicação).
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113486185-d7fb5280-9487-11eb-87aa-31a49a1db23a.png)
+
+Para interligar estas estruturas, vamos usar:
+
+Os Intent() e startActivity();
+
+##  Intent
+
+Um objeto Intent carrega informações que o sistema Android usa para determinar o componente a iniciar (como o nome exato do componente ou categoria do componente que deve receber o intent), além de informações que o componente receptor usa para realizar a ação adequadamente (como a ação a tomar e os dados a usar). No resumo: um Intent é um objeto de mensagem que usamos para solicitar uma ação de um outro componente do aplicativo. Ou seja, podemos solicitar ações de uma Activity, de um Service, de um Content Provider ou de um Broadcast Receiver.
+
+Existem várias formas de componentes se comunicarem, mas temos 3 usos fundamentais:
+
+Iniciar uma Activity
+Iniciar um Service
+Fornecer uma transmissão, que será recebida pelos Broadcast Receivers
+
+
+
+
+
+Tipos de Intents
+Há dois tipos de Intents:
+
+Os Intents Explícitos especificam o componente. Normalmente, usa-se para iniciar um componente no próprio aplicativo porque se sabe o nome da classe da Activity ou do Service. É o que iremos utilizar na nossa aula.
+
+Os Intents Implícitos não nomeiam nenhum componente específico, mas declaram uma ação a ser feita, o que permite que um componente de outro aplicativo ou do próprio Android a realize. Por exemplo: se você deseja compartilhar algo, a ação do botão de compartilhar pode disparar um Intent implícito e o Android irá perguntar para o usuário qual App deve concluir a ação.
+
+Portanto, nós vamos usar o Intent para abrir uma Janela, na verdade, outra Activity!
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113486226-10029580-9488-11eb-9d84-60787c5637f8.png)
+
+A criação do Método para abrir as  Activities ComoJogar e Jogo, usando Intent.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113486259-2b6da080-9488-11eb-8a76-b69ceb2a2b14.png)
+
+Nome do método. Este método é privado pois ele é visível somente para esta classe.
+Declaração do Intent com o nome da intenção (janela e janelag);
+Na criação do Intent estou definindo que este contexto irá abrir as Activities (classe) correspondentes aos botões ComoJogar.class e Jogo.class!
+Estamos usando o iniciar uma Activity com o nome que explicamos no Intent (janela e janelag);
+
+
+
+startActivity()
+
+O método startActivity() inicia uma instância declarada no Intent, ou seja, inicia outra Activity.
+Iniciar outra atividade | Desenvolvedores Android 
+
+
+
+finish()
+
+Método para finalizar uma Activity.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113486277-4e985000-9488-11eb-8c02-69a0f2635221.png)
+
+Agora iremos para a programação do Jogo propriamente dito.
+Verifique todos os IDs, se estão corretos e vamos abrir a Activity Jogo.java.
+
+O código completo será postado no github dentro do diretório Aula17, após desenvolvermos em aula.
+
+_________________________________________________________________________________________________
+## Referências
+
+https://docs.google.com/document/d/1fQrCmC3AmqJe5UP-tOz9sQhGWBZ-f_dbb2xtlGV4LhA/edit
 
 
 
