@@ -1112,6 +1112,8 @@ O código completo será postado no github dentro do diretório Aula17, após de
 _________________________________________________________________________________________________
 ## Referências
 
+https://developer.android.com/guide/topics/ui/layout/relative?hl=pt-br
+https://www.devmedia.com.br/linear-table-e-relative-layouts-com-android-studio/34127
 https://docs.google.com/document/d/1fQrCmC3AmqJe5UP-tOz9sQhGWBZ-f_dbb2xtlGV4LhA/edit
 
 
