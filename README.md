@@ -1116,6 +1116,65 @@ https://developer.android.com/guide/topics/ui/layout/relative?hl=pt-br
 https://www.devmedia.com.br/linear-table-e-relative-layouts-com-android-studio/34127
 https://docs.google.com/document/d/1fQrCmC3AmqJe5UP-tOz9sQhGWBZ-f_dbb2xtlGV4LhA/edit
 
+________________________________________________________________________________________________________
+
+##  Aula XIX e XX de Desenvolvimento de Aplicativo I
+Criando Jogos
+Media.player
+Toast.makeText();
+Classe URI;
+onBackPressed()
+equals();
+AlertDialog
+Adicionando pontuação no jogo
+_____________________________________________________________________________________________________
+Fontes:
+Desenvolvedores Android 
+Áudio e vídeo | Desenvolvedores Android 
+https://developer.android.com/guide/topics/media/media-controls?hl=pt-br 
+Para que servem os métodos ToString(), Equals() e GetHashCode()? - Blog da TreinaWeb 
+_____________________________________________________________________________________________________
+Criando Jogos
+Jogos de Trívia
+
+Jogos de Trívia, são games de perguntas e respostas, tipo como “Perguntados” e o antigo e famoso “Jogo do Milhão”.
+Para desenvolver este game no AS, é bem mais simplificado, pois iremos fixar a navegação e configuração entre Activities e a inserção de códigos que faremos sempre no desenvolvimento de aplicações.
+
+
+Trabalhando e controlando Mídias
+
+O multimídia do Android inclui compatibilidade com diversos tipos de mídia comuns. Assim, podemos integrar facilmente áudio, vídeo e imagens aos aplicativos. É possível reproduzir áudio ou vídeo de arquivos de mídia armazenados nos recursos do aplicativo (recursos brutos), de arquivos independentes no sistema de arquivos ou de um fluxo de dados que chega por meio de uma conexão de rede, tudo isso com APIs Media Player.
+
+
+Abrindo um novo projeto e configurando a pasta Res.
+
+No post do ClassRoom temos a pasta Resources compactada, vamos fazer download dela.
+
+
+Abrindo novo projeto:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113794583-460e7680-9721-11eb-950f-fd80bbdf85ef.png)
+
+Na pasta Res, organize os arquivos de imagem conforme vocês estão vendo na imagem:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113794671-75bd7e80-9721-11eb-8e4a-dd897da215ab.png)
+
+Ainda dentro da pasta Res, iremos criar outro diretório, que chamaremos de raw.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113795005-3f343380-9722-11eb-8fc0-ff3490992b73.png)
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113795068-61c64c80-9722-11eb-9bdb-fd674014daed.png)
+
+Próxima etapa, criar as seguintes classes para o nosso projeto:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113795124-84f0fc00-9722-11eb-8a1c-65c181708cbd.png)
+
+Vamos agora para os arquivos de XML, ou seja, vamos fazer os nossos Layouts ….. linear ainda, só mais esta semana …….😆😬😝😈😈😈😈
+
+_______________________________________________________________________________
+## Referências
+
+https://docs.google.com/document/d/1ZFnBVUp-zElDuzYMW8jX5c_M9RovWwo5vudverHr_E4/edit
 
 
 
