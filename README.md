@@ -1176,6 +1176,165 @@ _______________________________________________________________________________
 
 https://docs.google.com/document/d/1ZFnBVUp-zElDuzYMW8jX5c_M9RovWwo5vudverHr_E4/edit
 
+_______________________________________________________________________________
+
+## Aula XXI de Desenvolvimento de Aplicativo I
+Constraint Layout
+Construindo um Layout 100% responsivo
+Criar uma IU responsiva com o Constraint Layout   
+Restrições e mapeamento
+Elementos de Layout
+________________________________________________________________________________________________________
+Fontes:
+https://developer.android.com/training/constraint-layout
+https://www.thiengo.com.br/constraintlayout-melhor-performance-no-android
+https://medium.com/collabcode/implementando-telas-no-android-com-constraint-layout-13a90e44622f
+https://github.com/android/views-widgets-samples/tree/master/ConstraintLayoutExamples 
+ https://developer.android.com/reference/android/widget/ScrollView 
+https://imasters.com.br/android/como-usar-o-constraint-layout-no-android 
+https://movile.blog/constraint-layout-indo-alem-do-editor-de-layout/ 
+https://developer.android.com/studio/write/image-asset-studio?hl=pt-br 
+https://developer.android.com/guide/topics/ui/controls/button?hl=pt-br 
+________________________________________________________________________________________________________
+Constraint Layout
+Criar uma IU responsiva com o Constraint Layout   
+
+O Constraint Layout permite criar layouts grandes e complexos com uma hierarquia de visualização plana (sem grupos de visualização aninhados). Ele é semelhante a RelativeLayout: todas as visualizações são dispostas de acordo com as relações entre visualizações irmãs e layout pai, mas são mais flexíveis que RelativeLayout e mais fáceis de usar com o Layout Editor do Android Studio.
+
+Constraints significa algo como “restrições” ou “limitações”, e são essas restrições que são o cerne por trás do funcionamento deste layout manager, sendo fundamentais para sua utilização entendê-las primeiro. Para definir a posição de uma view no Constraint Layout, devemos adicionar ao menos uma constraint horizontal e uma vertical para a view. Cada constraint representa uma conexão ou alinhamento em relação à outra view, o layout parent ou mesmo uma linha-guia invisível. 
+
+Cada constraint define a posição da view a partir de seus eixos vertical e horizontal; motivo pelo qual temos de definir no mínimo essas duas constraints, embora seguidamente precisaremos de mais de duas para conseguir os comportamentos desejados. Quando arrastamos e soltamos uma view no Layout Editor, ela fica exatamente onde a deixamos, mesmo que não possua constraint alguma. No entanto, isso é apenas para tornar o nosso trabalho mais fácil quando estiver posicionando os elementos; se uma view não possui constraints, ela ficará no canto superior esquerdo da tela automaticamente (0,0) - Como na imagem mais adiante!
+
+Todo o poder do Constraint Layout está disponível diretamente nas ferramentas visuais do Layout Editor, porque a API de layout e o Layout Editor foram especialmente criados um para o outro. Assim, podemos criar todo o layout com o Constraint Layout, usando o recurso de arrastar e soltar, em vez de editar o XML e verificamos o XML quando precisamos fazer algum tipo de configuração específica ou duplicar elementos.
+
+
+
+Importante!
+Visão geral sobre restrições (fonte: documentação do Android)
+
+Para definir a posição de uma visualização no Constraint Layout, é preciso adicionar pelo menos uma restrição horizontal e uma vertical para a visualização do usuário. Cada restrição representa uma conexão ou alinhamento para outra visualização, o layout pai ou uma linha guia invisível. Cada restrição define a posição da visualização ao longo do eixo vertical ou horizontal. Assim, cada visualização precisa ter pelo menos uma restrição para cada eixo, mas muitas vezes são necessárias mais.
+
+Quando soltamos uma visualização no Layout Editor, ela permanece onde deixamos mesmo que não haja restrições. No entanto, isso serve apenas para facilitar a edição. Se uma visualização não tiver restrições quando executamos o layout em um dispositivo, ela será desenhada na posição [0,0], isto é, no canto superior esquerdo da tela! Isto é padrão para qualquer construção de layout, não só no AS mas em todos os níveis de desenvolvimento web!
+
+Na imagem abaixo, o layout fica bem no editor, mas não há restrição vertical na visualização C. Quando esse layout é colocado em um dispositivo, a visualização C fica alinhada horizontalmente às extremidades esquerda e direita da visualização da propriedade A, mas aparece na parte superior da tela, porque não tem restrição vertical.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113796035-a2bf6080-9724-11eb-86fb-be6948a9b858.png)
+
+Na imagem da esquerda, o editor mostra a visualização C abaixo de A, mas não tem restrição vertical.
+E na imagem da direita, a visualização C está agora verticalmente restrita abaixo da visualização A.
+
+Na verdade, no Constraint Layout precisamos organizar os objetos e suas relações, pois cada componente de layout que inserimos ele terá as restrições configuradas e, estas restrições são definidas em relação às margens e os outros componentes que temos no layout!
+
+Um ponto básico que precisamos saber quando inserirmos um componente são as restrições, pois elas serão aplicadas em escalas de telas nos dispositivos (devices) que acessam o App.
+Observe na imagem abaixo como será definido o posicionamento de cada componente de layout, não importa qual, pode ser um texto, uma imagem, um Array de lista, campos de textos e numéricos ….. todos possuirão a relação de restrições de acordo com a imagem abaixo.
+
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113796087-c682a680-9724-11eb-8930-6e451adb92e8.png)
+
+Na visualização geral do layout, qualquer componente inserido, será visto da forma como a imagem abaixo:
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113796150-f16cfa80-9724-11eb-9d4e-2fbbbcb68fb2.png)
+
+Quando estivermos criando constraints devemos ter em mente!
+
+Cada componente deve ter ao menos duas constraints: uma vertical e uma horizontal;
+Podemos criar constraints somente entre um constraint handle (o ícone circular) e um ponto de ancoragem que compartilhem o mesmo plano, ou seja, vertical com vertical e horizontal com horizontal;
+Cada constraint handle pode ser usado para apenas uma constraint, mas podemos criar várias constraints (de diferentes componentes) para um mesmo ponto de ancoragem.
+Para remover uma constraint, selecione a view e então clique no constraint handle. Ou remova todas constraints selecionando a view e depois clicando em “Clear Constraints”.
+Se adicionarmos constraints opostas em um componente, as linhas da constraint se tornam serrilhadas como na imagem abaixo, indicando forças opostas.
+
+![studio-constraint-first](https://user-images.githubusercontent.com/17149877/113796190-06498e00-9725-11eb-916a-d9365aeaa3b8.gif)
+
+![studio-constraint-second](https://user-images.githubusercontent.com/17149877/113796200-0cd80580-9725-11eb-89a6-5e4395293260.gif)
+
+
+
+Dica!
+
+O efeito é mais visível quando o tamanho do componente é definido literalmente ou como “wrap content”, o que, nesse caso, vai fazer com que o componente fique centralizado entre as constraints. Se ao invés disso você quiser que ele fique esticado para preencher o espaço entre as duas constraints, troque o tamanho para “match constraints”; caso contrário (se quiser manter o tamanho original), ajuste suas constraints de acordo.
+Fonte: https://imasters.com.br/android/como-usar-o-constraint-layout-no-android 
+
+
+
+Ajustando o tamanho dos componentes
+
+Nós podemos usar os cantos do  componente para redimensioná-lo, mas isso não é recomendado, uma vez que adiciona um valor de largura e altura literal à ele, impedindo-o de se ajustar às diferentes resoluções de telas. 
+
+O mais correto é:  Para selecionar modos de redimensionamento mais espertos!
+-  Clique no componente;
+-  Abra a janela de propriedades dele no lado direito do editor;
+-  Próximo ao topo da janela de propriedades está o View Inspector, que inclui controles para muitas propriedades de layout, como mostrado na figura abaixo (disponível apenas para layouts usando Constraint Layout):
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113796310-5a547280-9725-11eb-8ae2-cb7c1d793665.png)
+
+Esta janela inclui controles para: 
+1.  proporção do tamanho, 
+2. excluir constraints, 
+3. modo de altura e largura,
+4.  margens;
+5.viés das constraints (tipo um offset).
+
+Wrap Content (ícone de setas): clássico, o tamanho é ajustado conforme o conteúdo;
+Match Constraints (ícone serrilhado): o componente se estica para preencher as constraints, excluindo margens. Usar esse modo permite definir uma proporção de tamanho (16:9, por exemplo);
+Fixed (ícone reto): valores literais, não recomendado.
+Para alternar entre estes modos, basta apenas clicar no símbolo do modo na View Inspector. Para alterar a margem padrão definida pela ferramenta, use o ícone de margem da toolbar, como na imagem abaixo:
+
+## Criando um Layout Constraint de Jogo
+Jogo: Rise of the Kings
+Layout Final - não funcional - Tela 1
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113796787-6c82e080-9726-11eb-8f86-0d63993e6522.png)
+
+## Criando um Layout Constraint de Jogo
+Jogo: Rise of the Kings
+Layout Final - não funcional - Tela 2
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113796957-b5d33000-9726-11eb-9daf-963e350f3ad9.png)
+
+Vamos começar pela Tela 1
+
+Primeiro iremos buscar as imagens que precisamos para elaborar um layout constraint. Lembrando que as imagens que estão sendo disponibilizadas foram editadas de forma superficial sem acabamento, pois o nosso objetivo é saber como construir um layout responsivo. Faça download da pasta que está postada no ClassRoom.
+
+Vamos criar um novo projeto com o nome que desejarem, escolheremos ainda o Nougat como SDK padrão para o nosso jogo. 
+
+Vamos arrastar as imagens que iremos usar neste tutorial para a nossa drawable.
+
+Vamos configurar a imagem fundo.png, como fundo da nossa aplicação.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113797059-e915bf00-9726-11eb-962f-6044347921ea.png)
+
+
+A View.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113797139-119db900-9727-11eb-9836-a4e24ae22dc8.png)
+
+
+Agora iremos montar o nosso Layout Constraint usando imagens que podem receber IDs e fazer parte de componentes de interação e integração de um projeto.
+
+Vamos começar pela imagem topo.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113797214-34c86880-9727-11eb-8fcc-281936210d84.png)
+
+
+Vamos observar quando trazemos o topo, lembrando aqui que estamos somente estudando os posicionamentos e as configurações das restrições tão importantes para a construção de um layout Constraint que se aplica a responsividade dos devices que irão acessar o nosso pp.
+
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113797268-545f9100-9727-11eb-969d-d325e0798447.png)
+
+Observamos que cada lado possui uma relação de dependência com os elementos de forma. Em um Layout Constraint usamos muito mais o view, o assistente de layout para suas construções do que o XML. Isso não desmerece nenhum trabalho de um dev, muito pelo contrário, mostra que ele sabe transitar em todos os layouts para poder desenvolver uma aplicação.
+
+A próxima etapa é começar a deixar o nosso layout responsivo com outros componentes.
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113797351-7b1dc780-9727-11eb-8e5e-7c9789a5549b.png)
+
+
+Muito importante no Constraint Layout é que o desenvolvedor tem liberdade de arrastar, aumentar e diminuir os componentes de acordo com a necessidade do App. Porém, vale salientar que um bom layout vem da definição de um wireframe eficiente e baseado na UX!
+
+Vamos para as etapas seguintes, inserindo os demais componentes!
+
+![Sem título](https://user-images.githubusercontent.com/17149877/113797663-131bb100-9728-11eb-881f-ed977365877b.png)
+
+
 
 
 
