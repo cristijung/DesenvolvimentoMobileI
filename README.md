@@ -1339,6 +1339,7 @@ _________________________________________________________________________
 # Referências
 
 https://docs.google.com/document/d/1-hSl_BBXuU8028uSkIp9fhgnj99iLW3QPIB04RCNBJA/edit
-
+Imagens do Jogo: Rise Of The  Kings
+https://rok.onemt.com/
 
 
