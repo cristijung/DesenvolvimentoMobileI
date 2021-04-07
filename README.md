@@ -1335,7 +1335,10 @@ Vamos para as etapas seguintes, inserindo os demais componentes!
 ![Sem título](https://user-images.githubusercontent.com/17149877/113797663-131bb100-9728-11eb-881f-ed977365877b.png)
 
 
+_________________________________________________________________________
+# Referências
 
+https://docs.google.com/document/d/1-hSl_BBXuU8028uSkIp9fhgnj99iLW3QPIB04RCNBJA/edit
 
 
 
