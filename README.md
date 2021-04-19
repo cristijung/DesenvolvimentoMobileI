@@ -1342,4 +1342,621 @@ https://docs.google.com/document/d/1-hSl_BBXuU8028uSkIp9fhgnj99iLW3QPIB04RCNBJA/
 Imagens do Jogo: Rise Of The  Kings
 https://rok.onemt.com/
 
+________________________________________________________________________
+## Aula XXII e XXIII - Desenvolvimento de Aplicativo I
+ListView
+ArrayAdapter 
+Método onOptionsItemSelected -  Menu Item 
+_________________________________________________________________________________________________________________
+Fontes:
+https://developer.android.com/reference/android/widget/ListView 
+https://www.devmedia.com.br/componente-listview-no-android-studio/32700 
+https://www.thiengo.com.br/listview-entendendo-e-utilizando-no-android 
+https://developer.android.com/guide/topics/ui/menus?hl=pt-br 
+https://developer.android.com/reference/android/widget/ArrayAdapter 
+https://www.devmedia.com.br/listas-e-adapters-no-android/33774 
+https://developer.android.com/reference/java/util/List 
+https://developer.android.com/guide/topics/ui/menus?hl=pt-br#java 
+https://pt.stackoverflow.com/questions/352953/abrir-uma-activity-ao-clicar-em-um-item-de-uma-list-view#:~:text=Se%20voc%C3%AA%20deseja%20abrir%20uma,na%20posi%C3%A7%C3%A3o%201%20da%20lista.  ←
+https://www.androidpro.com.br/blog/desenvolvimento-android/listviews/ ←
+http://portal.tdevrocks.com.br/2014/12/23/tutorial-criando-menu-pop-up-no-android-e-ios-11/ 
+https://developer.android.com/training/snackbar/showing?hl=pt-br 
+https://developer.android.com/guide/topics/ui/menus?hl=pt-br 
+________________________________________________________________________________________________________________
+
+ListView
+Exibição de lista
+
+Exibe uma coleção de visualizações com rolagem vertical, onde cada visualização é posicionada imediatamente abaixo da visualização anterior na lista. Para obter uma abordagem mais moderna, flexível e de alto desempenho para exibir listas.
+
+É um componente visual utilizado para o Android onde sua finalidade é de armazenar uma ampla quantidade de informações e com o poderio de atualizar, receber e enviar eventos dinamicamente.
+
+O ListView (chamado de lvOpcoes) é o componente que recebe o adaptador e todos os seus eventos que passam a ser incrementados.
+
+Para exibir uma lista, você pode incluir uma visualização de lista em seu arquivo XML de layout:
+
+
+
+<ListView
+      android:id="@+id/list_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" /
+
+
+
+
+Uma visualização de lista é uma visualização do adaptador que não conhece os detalhes, como tipo e conteúdo, das visualizações que contém. Em vez disso, a exibição de lista solicita exibições sob demanda de um ListAdapter conforme necessário, como para exibir novas exibições conforme o usuário rola para cima ou para baixo.
+
+Para exibir itens na lista, chame setAdapter(android.widget.ListAdapter) para associar um adaptador à lista. Para obter um exemplo simples, consulte a discussão sobre como preencher uma visualização do adaptador com texto no guia de Layouts .
+
+List
+Lista
+
+Uma coleção ordenada (também conhecida como sequência ). O usuário desta interface tem controle preciso sobre onde na lista cada elemento é inserido. O usuário pode acessar os elementos por seu índice inteiro (posição na lista) e pesquisar os elementos na lista.
+
+Ao contrário dos conjuntos, as listas geralmente permitem elementos duplicados. Mais formalmente, as listas normalmente permitem pares de elementos e1e e2 outros e1.equals(e2), e normalmente permitem vários elementos nulos se permitirem elementos nulos. Não é inconcebível que alguém queira implementar uma lista que proíbe duplicatas, lançando exceções de tempo de execução quando o usuário tenta inseri-las, mas esperamos que esse uso seja raro.
+
+A List Interface de colocar estipulações adicionais, para além daqueles especificados no Collectioninterface, sobre os contratos de as iterator, add, remove, equals, e hashCode métodos. Declarações para outros métodos herdados também estão incluídas aqui por conveniência.
+
+A List Interface fornece quatro métodos para acesso posicional (indexado) aos elementos da lista. Listas (como matrizes Java) são baseadas em zero. Observe que essas operações podem ser executadas em tempo proporcional ao valor do índice para algumas implementações (a LinkedListclasse, por exemplo). Portanto, iterar sobre os elementos em uma lista é geralmente preferível a indexar por meio dela, se o chamador não souber a implementação.
+
+A List Interface fornece um iterador especial, denominado a ListIterator, que permite a inserção e substituição de elementos e o acesso bidirecional, além das operações normais que a Iteratorinterface fornece. Um método é fornecido para obter um iterador de lista que começa em uma posição especificada na lista.
+
+A List Interface fornece dois métodos para pesquisar um objeto especificado. Do ponto de vista do desempenho, esses métodos devem ser usados ​​com cautela. Em muitas implementações, eles realizarão pesquisas lineares caras.
+
+Métodos de lista 
+
+Os List.of(): métodos de construção estáticos fornecem uma maneira conveniente de criar listas imutáveis. As List instâncias criadas por esses métodos têm as seguintes características:
+
+Eles são estruturalmente imutáveis. Os elementos não podem ser adicionados, removidos ou substituídos. Chamar qualquer método modificador sempre causará o UnsupportedOperationException lançamento. No entanto, se os próprios elementos contidos forem mutáveis, isso pode fazer com que o conteúdo da Lista pareça ser alterado.
+Eles não permitem null elementos. As tentativas de criá-los com null elementos resultam em NullPointerException.
+
+Eles são serializáveis ​​se todos os elementos forem colocados em séries
+
+A ordem dos elementos na lista é a mesma dos argumentos fornecidos ou dos elementos na matriz fornecida.
+Eles são baseados em valores. Os chamadores não devem fazer suposições sobre a identidade das instâncias retornadas. 
+As construções são livres para criar novas instâncias ou reutilizar as existentes. Portanto, as operações sensíveis à identidade nessas instâncias (igualdade de referência ( ==), código hash de identidade e sincronização) não são confiáveis ​​e devem ser evitadas.
+Eles são serializados conforme especificado na página Formulário serializado .
+
+
+ArrayAdapter
+
+![111](https://user-images.githubusercontent.com/17149877/115258296-3e7aa480-a107-11eb-997f-e8b402c4565d.png)
+
+____________________________________________________________
+# Referências
+https://docs.google.com/document/d/1_wIbqZXSsoqRQ8HH7N10Q_oU99KIttJKjAih_S9hJiU/edit
+
+____________________________________________________________
+##  Aula XXIV - Desenvolvimento de Aplicativo I
+Passar dados entre Activities
+Configurar um Gif;
+Configurar um vídeo;
+Tocar uma música;
+
+Interações entre Activities
+
+Vamos abrir um Novo Projeto, neste exemplo usarei o nome de Terror, pois iremos criar:
+Passar dados entre Activities
+Configurar um Gif;
+Configurar um vídeo;
+Tocar uma música;
+
+Vamos organizar o seguinte layout constraint - cores e assuntos livres:
+
+![111](https://user-images.githubusercontent.com/17149877/115258643-8c8fa800-a107-11eb-9927-a470f743ba3b.png)
+
+Não esqueça de salvar uma imagem .gif, uma música no formato .mp3, não precisa ser longa e um vídeo, aqui no caso eu escolhi o teaser do filme The Num.
+
+
+Vamos já criar as outras Activities , observe a imagem abaixo:
+
+![111](https://user-images.githubusercontent.com/17149877/115258751-a630ef80-a107-11eb-8e29-9f1556b07721.png)
+
+Vamos agora, criar os 2 diretórios que necessitamos, um é o raw, para colocarmos a nossa música e vídeo e o assets, para podermos inserir a imagem .gif
+
+![111](https://user-images.githubusercontent.com/17149877/115258899-c6f94500-a107-11eb-9780-a92551bed0a9.png)
+
+![111](https://user-images.githubusercontent.com/17149877/115259008-e001f600-a107-11eb-8a34-34fdc385a2a9.png)
+
+A estrutura do projeto ficará ....
+
+![111](https://user-images.githubusercontent.com/17149877/115259143-ff008800-a107-11eb-9170-9043c0872c53.png)
+
+MainActivity
+
+1ª Parte, declaração dos atributos com os IDs e mapeamento. Não esquecer que a classe MediaPlayer precisa ser mapeada de forma diferente e sempre dentro do onCreate!!
+
+![111](https://user-images.githubusercontent.com/17149877/115259293-20fa0a80-a108-11eb-8d1e-e8c1efaa97b2.png)
+
+____________________________________________________________________________________
+## Referências
+
+https://docs.google.com/document/d/1jIy1tbXf1RhDth2xM5neWdONhV65JPOymePKUiVkah4/edit
+
+_____________________________________________________________________________________
+
+## Aula XXV, XXVI, XXVII - Desenvolvimento de Aplicativo I
+Semana de Sensores
+Pacote android.hardware
+Framework para Sensores
+SensorManager - android.hardware.SensorManager
+Sensores de movimento
+Sensores ambientais
+Sensores de posição
+Ciclo de vida das Activities
+___________________________________________________________________________________________
+Fontes:
+https://developer.android.com/guide/topics/sensors?hl=pt-br 
+https://developer.android.com/guide/topics/sensors/sensors_motion?hl=pt_br 
+https://www.devmedia.com.br/utilizacao-de-sensores-na-plataforma-android/34444 
+https://developer.android.com/studio/write/tool-attributes?hl=pt-br 
+https://developer.android.com/guide/components/activities/activity-lifecycle?hl=pt-br 
+___________________________________________________________________________________________
+Sensores
+
+Usamos sensores no dispositivo para adicionar recursos avançados de localização e movimento ao app, desde GPS ou local da rede até acelerômetro, giroscópio, temperatura, barômetro e muito mais.
+
+A maioria dos dispositivos Android têm sensores integrados que medem movimento, orientação e várias condições ambientais. Esses sensores geram dados brutos com alta precisão e são úteis para monitorar o movimento ou o posicionamento tridimensional do dispositivo ou para acompanhar as mudanças no ambiente ao redor. 
+
+Por exemplo, um jogo pode rastrear leituras do sensor de gravidade de um dispositivo para inferir gestos e movimentos complexos do usuário, como inclinação, vibração, rotação ou oscilação. De maneira semelhante, um aplicativo de previsão do tempo pode usar os sensores de temperatura e de umidade para calcular e informar o ponto de condensação ou um aplicativo de viagem pode usar o sensor de campo geomagnético e o acelerômetro para informar um ponto cardinal. 
+(fonte: https://developer.android.com/guide/topics/sensors/sensors_overview?hl=pt-br )
+
+
+A plataforma Android é compatível com três categorias amplas de sensores:
+
+Sensores de movimento
+Esses sensores medem forças rotacionais e de aceleração em três eixos. Essa categoria inclui acelerômetros, sensores de gravidade, giroscópios e sensores vetoriais de rotação.
+
+Sensores ambientais
+Esses sensores medem vários parâmetros ambientais, como temperatura e pressão do ar ambiente, iluminação e umidade. Essa categoria inclui barômetros, fotômetros e termômetros.
+
+Sensores de posição
+Esses sensores medem a posição física de um dispositivo. Essa categoria inclui sensores de orientação e magnetômetro
+
+
+O Pacote android.hardware e o Framework de sensor
+
+É possível acessar esses sensores e coletar dados brutos por meio do framework de sensor do Android. Esse framework faz parte do pacote android.hardware e inclui as seguintes classes e interfaces:
+
+
+Dica:
+Todas as classes necessárias para interação com os sensores presentes em um dispositivo Android podem ser encontradas no pacote android.hardware.*. 
+
+
+
+Esse pacote também contém classes para gerenciamento do uso da câmera, como as classes:
+Camera; 
+Camera.Size;
+Camera.Parameters;
+Camera.CameraInfo.
+
+E as interfaces:  
+Camera.AutoFocusCallback;
+Camera.ErrorCallback;
+Camera.OnZoomChangeListener; 
+Camera.PictureCallback;
+Camera.PreviewCallback; 
+Camera.ShutterCallback.
+
+O primeiro passo em seu projeto é instanciar a primeira classe apresentada, a SensorManager. A grande maioria dos aplicativos Android será formada por algumas Activities, que podem ser imaginadas como telas do software. Por exemplo, uma tela de login, uma tela de cadastro ou uma tela onde o usuário visualiza os dados recuperados de um sensor de presença, de proximidade, de temperatura e assim por diante, conforme foi estabelecido pela concepção do projeto.
+
+A classe Activity possui um método chamado getSystemService, que permite que o desenvolvedor trabalhe com um serviço no nível de sistema operacional. O serviço que será acessado depende do parâmetro que vamos passar para esse método. Para nossa facilidade, a mesma classe também fornece diversas constantes para acessar diferentes serviços. Uma delas é a SENSOR_SERVICE, que faz com que o método citado retorne um SensorManager, conforme o código a seguir:
+
+
+SensorManager mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+
+
+Segundo Passo: Conhecendo os sensores!
+
+Apesar da API fornecer as classes necessárias para trabalhar com uma quantidade muito grande de sensores, é necessário que o smartphone possua estes hardwares. Não são todos aparelhos que terão um sensor de temperatura ou de luz, porém outros são mais comuns, como sensor de proximidade e acelerômetro. Entretanto, podemos criar uma rotina que verifique quais são os sensores disponíveis e quais as possibilidades que nos serão oferecidas. 
+
+
+Código para listagem dos sensores presentes no device Android
+
+List<Sensor> lista = mSensorManager.getSensorList(Sensor.TYPE_ALL); Iterator<Sensor> iterator = lista.iterator(); String sensores = "... "; while (iterator.hasNext()) { Sensor sensor = iterator.next(); sensores += " - " + sensor.getName() + "\n"; } Toast.makeText( getApplicationContext(), sensores, Toast.LENGTH_LONG).show();
+
+
+
+Terceiro e próximo passo: trabalhando com os sensores
+
+Mas antes mesmo de colocarmos a mão no código, é muito importante sabermos que:
+
+SensorManager
+Use esta classe para criar uma instância do serviço do sensor. Ela oferece vários métodos para acessar e listar sensores, registrar e cancelar o registro de listeners de eventos do sensor e coletar informações de orientação. Essa classe também disponibiliza diversas constantes usadas para informar a precisão do sensor, definir taxas de aquisição de dados e calibrar os sensores.
+
+Sensor
+Use esta classe para criar uma instância de um sensor específico. Ela oferece vários métodos que permitem determinar os recursos de um sensor.
+
+SensorEvent
+O sistema usa esta classe para criar um objeto de evento do sensor, que disponibiliza informações relacionadas a esse tipo de evento. Um objeto de evento do sensor inclui as seguintes informações: dados brutos do sensor, tipo de sensor que gerou o evento, precisão dos dados e carimbo de data/hora do evento.
+
+SensorEventListener
+Use esta interface para criar dois métodos de callback que receberão notificações (eventos de sensor) quando os valores do sensor ou a precisão dele mudarem.
+Em um aplicativo normal, essas APIs relacionadas ao sensor são usadas para realizar duas tarefas básicas:
+
+Identificar sensores e recursos do sensor: Identificar sensores e recursos do sensor durante a execução é útil quando seu aplicativo tem funções que dependem de tipos de sensor ou recursos relacionados específicos. Por exemplo, quando você quer identificar todos os sensores presentes em um dispositivo e desativar qualquer recurso do aplicativo que dependa de sensores ausentes. De maneira semelhante, essa tarefa também é usada para identificar todos os sensores de um determinado tipo para escolher a implementação que oferece o desempenho ideal para seu aplicativo.
+
+Monitorar eventos do sensor: Para coletar dados brutos, você monitora os eventos do sensor. Esse tipo de evento ocorre sempre que um sensor detecta uma mudança nos parâmetros que está medindo. Um evento do sensor oferece quatro informações: nome do sensor que acionou o evento, carimbo de data/hora do evento, precisão do evento e os dados brutos que acionaram o evento.
+
+
+
+
+
+Disponibilidade do sensor por plataforma.
+Fonte: https://developer.android.com/guide/topics/sensors/sensors_overview?hl=pt-br 
+
+Sensor
+Android 4.0
+(API nível 14)
+Android 2.3
+(API nível 9)
+Android 2.2
+(API nível 8)
+Android 1.5
+(API nível 3)
+TYPE_ACCELEROMETER
+Sim
+Sim
+Sim
+Sim
+TYPE_AMBIENT_TEMPERATURE
+Sim
+n/d
+n/d
+n/d
+TYPE_GRAVITY
+Sim
+Sim
+n/d
+n/d
+TYPE_GYROSCOPE
+Sim
+Sim
+n/d1
+n/d1
+TYPE_LIGHT
+Sim
+Sim
+Sim
+Sim
+TYPE_LINEAR_ACCELERATION
+Sim
+Sim
+n/d
+n/d
+TYPE_MAGNETIC_FIELD
+Sim
+Sim
+Sim
+Sim
+TYPE_ORIENTATION
+Sim2
+Sim2
+Sim2
+Sim
+TYPE_PRESSURE
+Sim
+Sim
+n/d1
+n/d1
+TYPE_PROXIMITY
+Sim
+Sim
+Sim
+Sim
+TYPE_RELATIVE_HUMIDITY
+Sim
+n/d
+n/d
+n/d
+TYPE_ROTATION_VECTOR
+Sim
+Sim
+n/d
+n/d
+TYPE_TEMPERATURE
+Sim2
+Sim
+Sim
+Sim
+
+
+1 Esse tipo de sensor foi adicionado no Android 1.5 (API nível 3), mas não estava disponível para uso até o Android 2.3 (API nível 9).
+2 Esse sensor está disponível, mas teve o uso suspenso.
+
+
+
+
+Vamos a Prática
+
+Abrir um novo projeto (nome desejado) com Empty Activity. A primeira prática que iremos fazer será utilizar a listagem de sensores.
+A maioria dos devices Android possuem sensores integrados que medem e calculam o movimento, orientação e condições ambientais, como este documento já mencionou. Esses sensores geram dados brutos com alta precisão e são úteis para monitorar o movimento ou o posicionamento do dispositivo ou capturar mudanças no ambiente.
+Vamos adicionar um botão e um TextView. ID do botão: listaSensor. ID do TextView: resposta. 
+
+![111](https://user-images.githubusercontent.com/17149877/115259866-a41b6080-a108-11eb-939b-b227d10cbab6.png)
+
+No MainActivity: Para identificar os sensores presentes em um dispositivo, primeiro é preciso acessar uma referência ao serviço do sensor. Para fazer isso, vamos criar uma instância da classe SensorManager chamando o método getSystemService() e passando o argumento SENSOR_SERVICE. Por exemplo:
+
+![111](https://user-images.githubusercontent.com/17149877/115260024-c1e8c580-a108-11eb-88bf-ccd2a32b6651.png)
+
+Vamos fazer os mapeamentos, no atributo sensorManager, após a importação do framework iremos praticamente buscar o micro-service!
+
+![111](https://user-images.githubusercontent.com/17149877/115260312-06746100-a109-11eb-9348-3abac4a07f76.png)
+
+
+
+A próxima etapa consiste em criarmos um List para que o app possa receber e armazenar as informações da listagem. Uma observação importante aqui:
+O List é uma interface e o ArrayList é a classe que a implementa. Porque estamos optando pelo List em vez do ArrayList? Simples, é preciso garantir a flexibilidade da aplicação, garantir que o mesmo objeto possa ser instanciado de maneiras distintas em pontos distintos no app. Como uma interface List, temos a certeza que os  métodos do objeto tem, mesmo que ele seja instanciado por uma classe como ArrayList.
+
+## Trabalhando com Sensores - Prática
+
+Vamos abrir um novo projeto, o nome pode ser o que você desejar, neste exemplo estou atribuindo o nome de SensoresB. Escolher Empty Activity.
+Nestas próximas práticas, iremos trabalhar com sensores de proximidade, portanto, é importante que todos configurem a saída da aplicação para o seu celular.
+Na próxima etapa, iremos acessar nosso arquivo AndroidManifest.xml.
+Vamos reforçar aqui que o arquivo AndroidManifest é o arquivo principal, onde  ficam todas as configurações. Ele obrigatoriamente deve ficar na pasta raiz. A função do arquivo é listar toda e qualquer atividade, serviço, provedor de conteúdo ou receptor que estão no aplicativo. Neste arquivo, iremos declarar um necessário recurso de hardware que será usado pelo App. É o <uses-feature>: a função de declarar este resource é informar a todas as entidades externas sobre o conjunto de recursos de hardware e software que serão dependências do aplicativo. Este elemento possui um atributo ---> atributo required, que permite especificar se o app exige para o seu funcionamento do recurso declarado ou se pode funcionar sem ele. Importante salientar que as compatibilidades com recursos em diferentes APIs, o elemento <uses-feature> desempenha um papel importante, permitindo que o aplicativo descreva os recursos necessários entre diferentes versões. Observe a imagem abaixo para ver como ficou o nosso Manifest.
+
+![111](https://user-images.githubusercontent.com/17149877/115260499-2efc5b00-a109-11eb-9864-7cb8289fb820.png)
+
+Na próxima etapa, iremos para o nosso layout. Iremos posicionar um TextView no início da nossa aplicação, o ID deverá ser: resultado.
+
+![111](https://user-images.githubusercontent.com/17149877/115260588-476c7580-a109-11eb-96c5-bae65122ebeb.png)
+
+
+Vamos acessar o nosso código no MainActivity e configurar os implementos que precisamos na Classe MainActivity. Observe a imagem abaixo!
+
+![111](https://user-images.githubusercontent.com/17149877/115260716-61a65380-a109-11eb-9e52-afb7ae0eaf45.png)
+
+Para facilitar o nosso trabalho, iremos clicar sobre o aviso e selecionar a opção de implementar os métodos. 
+
+![111](https://user-images.githubusercontent.com/17149877/115260878-88648a00-a109-11eb-8948-7a2584cff941.png)
+
+Na janela pop-up, selecione todos e deixe marcada a opção @overrride.
+
+![111](https://user-images.githubusercontent.com/17149877/115260987-a03c0e00-a109-11eb-8301-a5ca55cf9da0.png)
+
+O próximo passo, será habilitarmos o sensor e fazermos o mapeamento dos nossos objetos.
+Precisaremos usar dois métodos que são bem importantes para a execução e definem alguns tópicos do App, são eles:
+
+##  Ciclo de vida das Activities
+Entenda o ciclo de vida da atividade
+
+À medida que o usuário navega no aplicativo, sai dele e retorna a ele, as instâncias Activity no aplicativo transitam entre diferentes estados no ciclo de vida. A classe Activity fornece uma quantidade de callbacks que permite que a atividade saiba sobre a mudança do estado: informa a respeito da criação, interrupção ou retomada de uma atividade ou da destruição do processo em que ela reside por parte do sistema.
+
+Dentro dos métodos de callback do ciclo de vida, você pode declarar como a atividade deve se comportar quando o usuário sai e retorna dela. Por exemplo, se estiver construindo um reprodutor de vídeos de transmissão em sequência, você pode pausar o vídeo e encerrar a conexão da rede quando o usuário alternar para outro aplicativo. Quando o usuário retornar, será possível reconectar a rede e permitir que ele reinicie o vídeo de onde parou. Ou seja, cada callback permite que você realize o trabalho específico adequado a determinada mudança de estado. Fazer o trabalho certo no momento apropriado e gerenciar as transições da maneira correta faz com que seu aplicativo seja mais robusto e tenha melhor desempenho. 
+
+Por exemplo, uma boa implementação dos callbacks de ciclo de vida pode ajudar a garantir que seu aplicativo evite os problemas a seguir:
+
+Falhas se o usuário receber uma chamada telefônica ou mudar para outro aplicativo enquanto estiver usando seu aplicativo.
+Consumo de recursos importantes do sistema quando o usuário não estiver usando ativamente o aplicativo.
+Perda do progresso do usuário se ele sair do aplicativo e retornar mais tarde.
+Falhas ou perda do progresso do usuário quando a orientação da tela mudar entre paisagem e retrato.
+
+Este documento explica detalhadamente o ciclo de vida da atividade. O documento começa descrevendo o paradigma do ciclo de vida. Em seguida, cada um dos callbacks é explicado: o que acontece internamente quando eles operam e o que você deve implementar durante a execução deles. Depois é apresentada a relação entre o estado da atividade e a vulnerabilidade de um processo que está sendo eliminado pelo sistema. Por fim, vários tópicos relacionados às transições entre os estados de atividade são discutidos.
+fonte: https://developer.android.com/guide/components/activities/activity-lifecycle?hl=pt-br 
+
+Depois desta breve explicação sobre as Activities precisaremos configurar o método onResume() e onPause.
+
+Como mencionamos neste estudo, o ciclo de vida das activities é definido pela navegação entre as fases da classe Activity, portanto, temos um conjunto principal de seis callbacks:
+
+onCreate();
+onStart();
+onResume();
+onPause();
+onStop();
+onDestroy();
+
+Quando a atividade insere o estado “Retomado”, ele vem para o primeiro plano e o sistema invoca o callback onResume(). É nesse estado que o App interage com o usuário. O App permanece nesse estado até que algo afete o foco da aplicação, em evento, por exemplo! Esse evento pode ser receber uma chamada telefônica, a própria navegação do usuário para outra activity ou mesmo desativar a tela do dispositivo. 
+
+Vamos agora configurar o onResume() sempre abaixo do método onCreate();
+
+![111](https://user-images.githubusercontent.com/17149877/115261226-d24d7000-a109-11eb-9a5a-f160354eb0d3.png)
+
+Nesta declaração estaremos definindo que nosso aplicativo deixe que os eventos permaneçam temporariamente em fila no hardware antes de serem entregues. 
+
+
+O próximo método será o onPause(). Também é um callback que faz parte do ciclo de vida das Activities. Ele é chamado quando o usuário não interage mais ativamente com a aplicação, mas ainda continua visível na tela. É a contrapartida do onResume().
+
+![111](https://user-images.githubusercontent.com/17149877/115261429-fc9f2d80-a109-11eb-8278-72af1dfde767.png)
+
+O restante ....,no arquivo de referência
+____________________________________________________________
+
+## Referência
+
+https://docs.google.com/document/d/1E8682773k10RNumcGoVSVMRP1HWlyE_wEqDGCdBQIqg/edit
+
+____________________________________________________________
+
+##  Aula XVIII de Desenvolvimento de Aplicativo I
+Semana Sensores e APIs
+APIs
+Google Maps Android API 
+Location Service API
+Links externos - App Links
+___________________________________________________________________________________________
+Fontes:
+https://www.devmedia.com.br/google-maps-android-api-e-location-service-api/37145
+https://developers.google.com/maps/documentation/android-sdk/map-with-marker?hl=pt-br 
+https://developer.android.com/training/maps?hl=pt-br 
+https://destaquesdoecommerceflf.wordpress.com/2015/09/22/servico-baseado-em-localizacao-lbs/ 
+https://developer.android.com/studio/write/app-link-indexing?hl=pt-br 
+___________________________________________________________________________________________
+Google Maps
+
+O uso de mapas nas aplicações Android sempre forneceu um aspecto mais profissional ao nosso produto final. Isso se deve em parte à qualidade da própria aplicação Google Maps e de sua imensa adoção entre usuários de todas as plataformas. Também podemos atribuir isso à qualidade que uma informação de localização tem em aplicações LBS. Mostrar um endereço em um campo de texto, como um TextView, e mostrar o mesmo endereço como um POI (Point Of Interest) em um mapa é uma diferença gritante de qualidade da informação.
+
+
+Serviços Baseados em Localização (Location-Based Service (LBS)) são serviços que usam informações geográficas para obter e gerar informações úteis para os usuários, como por exemplo, a localização do posto de gasolina mais próximo ou a melhor rota da posição corrente do usuário até o hospital mais próximo. Existem várias iniciativas na definição de padrões com o objetivo de aumentar a interoperabilidade entre aplicações baseadas em serviços de localização. Dentre as principais iniciativas podemos citar as especificações Open Location Services (OpenLS) do Open Geospatial Consortium (OGC) e Mobile Location Protocol (MLP) do Open Mobile Alliance (OMA). O uso da tecnologia Web Services também é uma forma de garantir a interoperabilidade entre as aplicações de LBS, uma vez que ela permite que aplicações em diferentes plataformas e linguagens de programação se comuniquem via XML ou outros padrões Web. 
+
+Fonte: https://www.devmedia.com.br/google-maps-android-api-e-location-service-api/37145 
+
+
+Criando um projeto usando Google Maps
+
+Vamos abrir um novo projeto com a opção GoogleMaps Activity, como a imagem abaixo.
+
+![111](https://user-images.githubusercontent.com/17149877/115261808-53a50280-a10a-11eb-81c4-8f9f22d3655b.png)
+
+Logo após criarmos o novo projeto, podemos observar que o arquivo AndroidManifest.xml já possui as tags da API do Google Maps, bem como o arquivo google_maps_api.xml  são diferenciados. O arquivo de “layout” não possui a visualização de design, pois a abordagem deste é diferente dos outros layouts voltados para a API.
+
+O próximo passo será acessarmos via navegador o link que o arquivo xml gerou. Vamos precisar gerar uma chave (key) para ser ativada na nossa API.
+
+E na próxima etapa, iremos colar a chave de ativação da nossa API no código do xml, a partir deste momento, é possível testar nosso Google Maps que já está funcionando. Observe que por padrão, a API traz as latitude e longitude da cidade de Sydney na Austrália, o que é possível mudar no arquivo java.
+
+
+![111](https://user-images.githubusercontent.com/17149877/115261977-7c2cfc80-a10a-11eb-9ed6-fb1dc5ef0a0f.png)
+
+Análise dos  codes:
+
+Arquivo MainActivity.java
+
+
+A importação:
+![111](https://user-images.githubusercontent.com/17149877/115262120-9f57ac00-a10a-11eb-9f53-f3964f5cbbed.png)
+
+
+O mapeamento:
+
+![111](https://user-images.githubusercontent.com/17149877/115262220-b4ccd600-a10a-11eb-8669-b93765229cfa.png)
+
+A codificação:
+
+![111](https://user-images.githubusercontent.com/17149877/115262353-d8901c00-a10a-11eb-8fbc-f048234e8d24.png)
+
+Visualizando:
+
+![111](https://user-images.githubusercontent.com/17149877/115262467-f493bd80-a10a-11eb-90ac-afa696513c21.png)
+
+_______________________________________________________
+## Referências
+https://docs.google.com/document/d/1lP0bB_0HYjB7ql9-AGnQocG15ehlWq9e1yZW63HBifc/edit
+
+_______________________________________________________
+
+##  Aula XXX - Desenvolvimento Aplicativo I
+Semana de: 
+Splash Screen
+Fragments
+Firebase
+Desenvolvimento de Projeto
+_____________________________________________________________________________________________
+Fontes:
+https://www.devmedia.com.br/como-criar-telas-de-abertura-no-android/33256 
+https://developer.android.com/guide/components/fragments?hl=pt-br 
+https://developer.android.com/guide/fragments 
+_____________________________________________________________________________________________
+Splash Screen
+
+Uma Splash Screen é uma tela de abertura que será a primeira a ser carregada, é o primeiro contato com o usuário. Ao abrir o app, o mesmo pode executar vídeos, animações via XML, ou até mesmo imagens animadas por um pequeno período de tempo e, ao mesmo tempo, aproveitar para inicializar quaisquer recursos que a aplicação necessite para começar a ser usada, como o acesso a um Web Service ou subir para a nuvem os dados de quando o app foi acessado off-line. 
+
+Primeiro iremos abrir um novo projeto e organizar as Activities de acordo com a imagem abaixo:
+
+![111](https://user-images.githubusercontent.com/17149877/115262749-33c20e80-a10b-11eb-81fd-7e3a83346b09.png)
+
+Escolha um vídeo ou um gif de acordo com o tema escolhido por você.
+
+No exemplo que estou montando neste tutorial, eu coloquei uma imagem de fundo, mas pode ser um gif animado ou mesmo um vídeo. Como coloquei uma imagem, vou inserir uma música e definir um tempo para que a Splash Screen fique carregada. É importante não exagerarmos no tempo da Splash pois estamos desenvolvendo para usuários.
+
+![111](https://user-images.githubusercontent.com/17149877/115262906-5522fa80-a10b-11eb-9ed3-289a69c463c5.png)
+
+Antes mesmo de dar continuidade, não esqueça que:
+
+Se escolhemos uma imagem de fundo, precisamos ter cuidado com o nome deste arquivo e colocar na pasta Drawable;
+Se escolhemos um vídeo e/ou uma música:
+Selecione a pasta Res no seu projeto;
+Clique com o botão direito/Directory;
+Crie um diretório com nome de raw;
+Coloque estes arquivos ali dentro.
+Se escolheu um .gif:
+Clique com o botão direito do mouse no projeto;
+Folder/Assets Folder;
+Com a opção vazio! Não esqueça que nesta pasta nós não podemos arrastar pela interface do AS, é preciso arrastar os arquivos pela pasta.
+
+
+Observe a imagem abaixo no que se refere a organização da estrutura do projeto.
+
+![111](https://user-images.githubusercontent.com/17149877/115263028-7388f600-a10b-11eb-91dd-dc62de05dd3a.png)
+
+Agora vamos ao código da nossa Splash Screen:
+
+O que vamos usar?
+
+getSupportActionBar().hide();
+Embora a barra de ação seja boa e um recurso importante para aplicativos Android, às vezes temos que escondê-la em alguns cenários, como no caso de uma Splash Screen! Você também pode ver outras opções como ocultar pelo XML, no link abaixo:
+https://medium.com/codixlab/how-to-hide-action-bar-c1bc838d23c8 
+
+
+getWindow().setFlags();
+É uma classe pública que interfere na política de comportamento e aparência de janela de nível superior. Uma instância desta classe deve ser usada como a visualização de nível superior adicionada ao gerenciador de janelas. Ele fornece políticas de IU padrão, como plano de fundo, área de título e similares. No caso em específico iremos usar o valor de FULL_SCREEN - tela cheia. Para conhecer mais parâmetros é importante acessar a documentação.
+https://developer.android.com/reference/android/view/Window 
+
+new Handler().postDelayed(new Runnable(){};
+É atualização gráfica da interface da aplicação, aqui estamos usando com o postDelayed e Runnable que já explicarei.
+O Handler é uma classe do pacote android.os, como o próprio nome já diz ele é um “Manipulador”. Quando criamos um novo Handler, ele é destinado à fila de mensagens/threads do thread que o criou. A partir daí toda mensagem que for destinada a ele será entregue para aquela fila de mensagens para serem executadas. Resumidamente, ele fica responsável por entregar as mensagens para a fila de sua thread, executando-as em seguida.
+Você pode estudar mais aqui!
+https://developer.android.com/reference/android/os/Handler 
+
+postDelayed(new Runnable(){};
+Significa chamar um método com delay, no caso do método é o Runnable que chamará a MainActivity depois de um tempo em milisegundos que podemos definir no nosso código. Traduzindo, o Android deixará a nossa Splash Screen no tempo em que definirmos para somente depois chamar a MainActivity! Muito importante, não podemos esquecer de mudar a ordem das activities no arquivo manifest! Você pode estudar mais pelo mesmo link que postei do Handler ou ainda complementar com o abaixo:
+https://docs.microsoft.com/en-us/dotnet/api/android.os.handler.postdelayed?view=xamarin-android-sdk-9 
+
+Para finalizar, usamos dentro do método  Run() o finsh() para destruir a Spash Screen, não permitindo assim que o usuário possa retornar com o recurso “Voltar” do seu dispositivo.
+
+No próximo passo, iremos trocar a ordem das activities no AndroidManifest.xml
+
+![111](https://user-images.githubusercontent.com/17149877/115263161-91565b00-a10b-11eb-95cf-c99d350c289a.png)
+
+## Fragments
+
+Um Fragment representa um comportamento ou uma parte da interface do usuário em um FrameActivity. É possível combinar vários fragmentos em uma única activity para criar uma UI adequada de vários painéis e reutilizar um fragmento para vários recursos. 
+
+Um fragmento deve ser sempre hospedado em uma activity e seu ciclo de vida será diretamente impactado pelo hospedeiro. Um exemplo simples é que quando uma atividade é pausada, todos os fragmentos dependentes dela também são e, quando a atividade é destruída, todos os fragmentos também são. No entanto, enquanto uma atividade estiver em execução, é possível processar cada fragmento independentemente. Os métodos de callbacks são aprimorados e utilizados para fazer transação entre fragmentos usando a pilha de retorno por meio do onResume() e refazendo as atividades.
+
+Ao adicionar um fragmento como parte de um layout de activity, ele se encontrará em um ViewGroup dentro da hierarquia de visualizações e o fragmento definirá o próprio layout de exibição.
+
+![111](https://user-images.githubusercontent.com/17149877/115263464-d4183300-a10b-11eb-99ed-e133be2b6fca.png)
+
+
+Vamos continuar usando o nosso layout que fizemos o SplashScreen, ou se desejar, abra novo projeto. A próxima etapa será inserir uma linha guia na vertical para ajudar na disposição dos nossos fragmentos.  Como na imagem abaixo:
+
+![111](https://user-images.githubusercontent.com/17149877/115263566-e98d5d00-a10b-11eb-9554-34ebb840e788.png)
+
+Vamos colocar 2 botões, faça a estilização da largura de acordo com a imagem abaixo, no entanto, pode escolher a cor e o texto dos botões de acordo com o seu tema.
+Vamos pesquisar e buscar o componente FrameLayout, arrastamos para o Constraint Layout e ajustamos seu tamanho conforme necessitamos.
+
+![111](https://user-images.githubusercontent.com/17149877/115263767-12aded80-a10c-11eb-80b0-a0623a795e71.png)
+
+Agora vamos criar dois pacotes no nosso projeto (activity e fragments):
+
+![111](https://user-images.githubusercontent.com/17149877/115263892-2fe2bc00-a10c-11eb-80ea-f63d973e8e58.png)
+
+![111](https://user-images.githubusercontent.com/17149877/115264002-4ab53080-a10c-11eb-9aa5-d9eee31c923f.png)
+
+Próxima etapa, clique sobre o pacote fragments e vamos criar um fragment em branco:
+
+![111](https://user-images.githubusercontent.com/17149877/115264159-6ddfe000-a10c-11eb-9ea4-74785975ab30.png)
+
+No nome, eu inseri Album, porém cada um pode escolher o nome adequado ao seu projeto.
+Quando criamos um Fragment, também é gerado um xml, observe agora a estrutura do nosso projeto.
+
+![111](https://user-images.githubusercontent.com/17149877/115264402-a7185000-a10c-11eb-969e-4f3cc1afecb4.png)
+
+No XML do fragment, vamos trocar o texto e fazer a formatação desejada. Como o nome do meu fragment é Album, alterei o texto para .. Álbum.
+
+Vamos criar mais um fragmento, dentro do pacote fragments. Vou dar o nome de Musica, pois ainda é referente ao meu exemplo.
+
+Mesmo processo: clicar com o botão direito sobre o pacote fragments e criar um em branco.
+
+Código completo, postado no repositório
+
+___________________________________________________________
+## Referências
+https://docs.google.com/document/d/1HjnybbAKkHYc9bWiQ_iW4vooHLqo76IAaDp47wWNByM/edit
+
+___________________________________________________________
+
+
+
 
