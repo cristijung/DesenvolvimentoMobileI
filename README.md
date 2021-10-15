@@ -389,7 +389,7 @@ valores booleanos e objetos de classes criadas no sistema. Vejamos um exemplo de
 
 ![Sem título](https://user-images.githubusercontent.com/17149877/110853158-096e6d00-8292-11eb-9740-bf8c42e74216.png)
 
-Dica:
+Dica: Done
 
 Obs.:
  Dependendo da versão do seu JDK, pode haver necessidade de repetir o tipo de dado.
