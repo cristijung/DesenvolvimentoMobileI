@@ -1954,6 +1954,7 @@ Código completo, postado no repositório
 ___________________________________________________________
 ## Referências
 https://docs.google.com/document/d/1HjnybbAKkHYc9bWiQ_iW4vooHLqo76IAaDp47wWNByM/edit
+https://developer.android.com/guide?hl=pt-br
 
 ___________________________________________________________
 
