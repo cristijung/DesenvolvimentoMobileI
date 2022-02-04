@@ -1957,6 +1957,7 @@ https://docs.google.com/document/d/1HjnybbAKkHYc9bWiQ_iW4vooHLqo76IAaDp47wWNByM/
 https://developer.android.com/guide?hl=pt-br
 
 ___________________________________________________________
+ up 04/02/2022
 
 
 
